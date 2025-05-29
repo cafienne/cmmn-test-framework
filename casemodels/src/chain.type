@@ -1,0 +1,7 @@
+<type xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne" id="chain.type" name="chain">
+    <schema>
+        <property id="sp__TEPmn_0" name="Root" type="object" multiplicity="ExactlyOne">
+            <schema id="_TEPmn_0" name="Schema_0"/>
+        </property>
+    </schema>
+</type>

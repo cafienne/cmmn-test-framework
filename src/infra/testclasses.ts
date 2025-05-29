@@ -39,7 +39,8 @@ import TestFaultBubbling from '../tests/api/caseplan/stage/testfaultbubbling';
 import TestModelBasedReactivate from '../tests/api/caseplan/stage/testmodelbasedreactivate';
 import TestNoFaultBubbling from '../tests/api/caseplan/stage/testnofaultbubbling';
 import TestStage from '../tests/api/caseplan/stage/teststage';
-import TestSubCaseFailureBubble from '../tests/api/caseplan/task/subcase/testsubcasefailurebubble';
+import TestSubCaseFailureBubble from '../tests/api/caseplan/task/casetask/testsubcasefailurebubble';
+import TestSubCaseTasks from '../tests/api/caseplan/task/casetask/testsubcasetasks';
 import TestAuthenticationFlow from '../tests/api/caseplan/task/testauthenticationflow';
 import TestProcessTask from '../tests/api/caseplan/task/testprocesstask';
 import TestTaskWithSpaces from '../tests/api/caseplan/task/testtaskwithspaces';
@@ -186,6 +187,7 @@ const AllTests: Array<Function> = [
     , TestModelBasedReactivate
     , TestNoFaultBubbling
     , TestSubCaseFailureBubble
+    , TestSubCaseTasks
     , TestTimer
     , TestUsersCaseAPI
     , TestDiscretionaryItems

@@ -1,0 +1,16 @@
+<CMMNDI xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne">
+    <CMMNDiagram>
+        <CMMNShape name="casetask/subcase" cmmnElementRef="cm__6SOUw_0">
+            <Bounds x="20" y="20" width="800" height="500"/>
+        </CMMNShape>
+        <CMMNShape cmmnElementRef="_6SOUw_1">
+            <Bounds x="110" y="80" width="140" height="80"/>
+        </CMMNShape>
+        <CMMNShape cmmnElementRef="_6SOUw_3">
+            <Bounds x="110" y="220" width="140" height="80"/>
+        </CMMNShape>
+        <CMMNShape cmmnElementRef="_6SOUw_5">
+            <Bounds x="340" y="80" width="140" height="80"/>
+        </CMMNShape>
+    </CMMNDiagram>
+</CMMNDI>

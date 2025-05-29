@@ -1,0 +1,9 @@
+<case xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne" id="casetask/subcase.case" name="casetask/subcase" expressionLanguage="spel" guid="_6SOUw">
+    <caseFileModel typeRef="chain.type"/>
+    <casePlanModel id="cm__6SOUw_0" name="casetask/subcase" autoComplete="true">
+        <humanTask id="_6SOUw_1" name="SubCaseTask_1" isBlocking="true"/>
+        <humanTask id="_6SOUw_3" name="SubCaseTask_2&#10;" isBlocking="true"/>
+        <caseTask id="_6SOUw_5" name="SubSubCase" isBlocking="true" caseRef="casetask/subsubcase.case"/>
+    </casePlanModel>
+    <caseRoles caseTeamRef="testteam.caseteam"/>
+</case>

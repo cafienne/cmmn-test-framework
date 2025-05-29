@@ -1,0 +1,7 @@
+<case xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne" id="casetask/subsubcase.case" name="casetask/subsubcase" expressionLanguage="spel" guid="_w4FSD">
+    <caseFileModel typeRef="chain.type"/>
+    <casePlanModel id="cm__w4FSD_0" name="casetask/subsubcase" autoComplete="true">
+        <humanTask id="_w4FSD_1" name="SubSubTask1" isBlocking="true"/>
+    </casePlanModel>
+    <caseRoles caseTeamRef="testteam.caseteam"/>
+</case>

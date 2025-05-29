@@ -1,0 +1,24 @@
+<case xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne" id="casetask/subcase_technical.case" name="casetask/subcase_technical" expressionLanguage="spel" guid="_M5GuO">
+    <documentation textFormat="text/plain">
+        <text><![CDATA[A sub case without HumanTasks]]></text>
+    </documentation>
+    <caseFileModel typeRef="chain.type"/>
+    <casePlanModel id="cm__M5GuO_0" name="casetask/subcase_technical" autoComplete="true">
+        <userEvent id="_M5GuO_3" name="Trigger Completion"/>
+        <milestone id="_M5GuO_5" name="Completed">
+            <entryCriterion id="crit__M5GuO_0">
+                <planItemOnPart id="_M5GuO_7" sourceRef="_M5GuO_3">
+                    <standardEvent>occur</standardEvent>
+                </planItemOnPart>
+            </entryCriterion>
+            <itemControl id="_M5GuO_6">
+                <requiredRule id="_M5GuO_8">
+                    <condition id="_M5GuO_9">
+                        <body><![CDATA[true]]></body>
+                    </condition>
+                </requiredRule>
+            </itemControl>
+        </milestone>
+    </casePlanModel>
+    <caseRoles caseTeamRef="testteam.caseteam"/>
+</case>

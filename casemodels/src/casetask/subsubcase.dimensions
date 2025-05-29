@@ -1,0 +1,10 @@
+<CMMNDI xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne">
+    <CMMNDiagram>
+        <CMMNShape name="casetask/subsubcase" cmmnElementRef="cm__w4FSD_0">
+            <Bounds x="20" y="20" width="800" height="500"/>
+        </CMMNShape>
+        <CMMNShape cmmnElementRef="_w4FSD_1">
+            <Bounds x="210" y="120" width="140" height="80"/>
+        </CMMNShape>
+    </CMMNDiagram>
+</CMMNDI>

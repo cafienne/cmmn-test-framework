@@ -1,0 +1,155 @@
+<definitions xmlns="http://www.omg.org/spec/CMMN/20151109/MODEL" xmlns:cafienne="org.cafienne">
+    <caseFileItemDefinition name="Root" definitionType="http://www.omg.org/spec/CMMN/DefinitionType/Unspecified" id="chain_type_Root.object"/>
+    <caseFileItemDefinition name="chain" definitionType="http://www.omg.org/spec/CMMN/DefinitionType/Unspecified" id="chain.type"/>
+    <case id="casetask/chain.case" name="casetask/chain" expressionLanguage="spel">
+        <caseFileModel cafienne:typeRef="chain.type">
+            <caseFileItem id="Root" name="Root" multiplicity="ExactlyOne" definitionRef="chain_type_Root.object"/>
+        </caseFileModel>
+        <casePlanModel id="cm__L0R9y_0" name="casetask/chain" autoComplete="true">
+            <planItem id="_L0R9y_1" name="RootHumanTask" definitionRef="ht__L0R9y_1"/>
+            <planItem id="_L0R9y_4" name="SubCase" definitionRef="ct__L0R9y_4"/>
+            <planItem id="_L0R9y_8" name="SubCase_Technical" definitionRef="ct__L0R9y_8"/>
+            <planItem id="_L0R9y_10" name="SubCase2" definitionRef="ct__L0R9y_10"/>
+            <humanTask id="ht__L0R9y_1" name="RootHumanTask" isBlocking="true"/>
+            <caseTask id="ct__L0R9y_4" name="SubCase" isBlocking="true" caseRef="casetask/subcase.case"/>
+            <caseTask id="ct__L0R9y_8" name="SubCase_Technical" isBlocking="true" caseRef="casetask/subcase_technical.case"/>
+            <caseTask id="ct__L0R9y_10" name="SubCase2" isBlocking="true" caseRef="casetask/subcase.case"/>
+        </casePlanModel>
+        <caseRoles cafienne:caseTeamRef="testteam.caseteam">
+            <role id="cr__rAKmR_0" name="Employee"/>
+            <role id="cr__rAKmR_1" name="Manager"/>
+            <role id="cr__rAKmR_2" name="ADMIN">
+                <documentation textFormat="text/plain">
+                    <text><![CDATA[admin of the world]]></text>
+                </documentation>
+            </role>
+        </caseRoles>
+    </case>
+    <case id="casetask/subcase.case" name="casetask/subcase" expressionLanguage="spel">
+        <caseFileModel cafienne:typeRef="chain.type">
+            <caseFileItem id="casetask/subcase/Root" name="Root" multiplicity="ExactlyOne" definitionRef="chain_type_Root.object"/>
+        </caseFileModel>
+        <casePlanModel id="cm__6SOUw_0" name="casetask/subcase" autoComplete="true">
+            <planItem id="_6SOUw_1" name="SubCaseTask_1" definitionRef="ht__6SOUw_1"/>
+            <planItem id="_6SOUw_3" name="SubCaseTask_2&#10;" definitionRef="ht__6SOUw_3"/>
+            <planItem id="_6SOUw_5" name="SubSubCase" definitionRef="ct__6SOUw_5"/>
+            <humanTask id="ht__6SOUw_1" name="SubCaseTask_1" isBlocking="true"/>
+            <humanTask id="ht__6SOUw_3" name="SubCaseTask_2&#10;" isBlocking="true"/>
+            <caseTask id="ct__6SOUw_5" name="SubSubCase" isBlocking="true" caseRef="casetask/subsubcase.case"/>
+        </casePlanModel>
+        <caseRoles cafienne:caseTeamRef="testteam.caseteam">
+            <role id="cr__rAKmR_0" name="Employee"/>
+            <role id="cr__rAKmR_1" name="Manager"/>
+            <role id="cr__rAKmR_2" name="ADMIN">
+                <documentation textFormat="text/plain">
+                    <text><![CDATA[admin of the world]]></text>
+                </documentation>
+            </role>
+        </caseRoles>
+    </case>
+    <case id="casetask/subsubcase.case" name="casetask/subsubcase" expressionLanguage="spel">
+        <caseFileModel cafienne:typeRef="chain.type">
+            <caseFileItem id="casetask/subsubcase/Root" name="Root" multiplicity="ExactlyOne" definitionRef="chain_type_Root.object"/>
+        </caseFileModel>
+        <casePlanModel id="cm__w4FSD_0" name="casetask/subsubcase" autoComplete="true">
+            <planItem id="_w4FSD_1" name="SubSubTask1" definitionRef="ht__w4FSD_1"/>
+            <humanTask id="ht__w4FSD_1" name="SubSubTask1" isBlocking="true"/>
+        </casePlanModel>
+        <caseRoles cafienne:caseTeamRef="testteam.caseteam">
+            <role id="cr__rAKmR_0" name="Employee"/>
+            <role id="cr__rAKmR_1" name="Manager"/>
+            <role id="cr__rAKmR_2" name="ADMIN">
+                <documentation textFormat="text/plain">
+                    <text><![CDATA[admin of the world]]></text>
+                </documentation>
+            </role>
+        </caseRoles>
+    </case>
+    <case id="casetask/subcase_technical.case" name="casetask/subcase_technical" expressionLanguage="spel">
+        <documentation textFormat="text/plain">
+            <text><![CDATA[A sub case without HumanTasks]]></text>
+        </documentation>
+        <caseFileModel cafienne:typeRef="chain.type">
+            <caseFileItem id="casetask/subcase_technical/Root" name="Root" multiplicity="ExactlyOne" definitionRef="chain_type_Root.object"/>
+        </caseFileModel>
+        <casePlanModel id="cm__M5GuO_0" name="casetask/subcase_technical" autoComplete="true">
+            <planItem id="_M5GuO_3" name="Trigger Completion" definitionRef="ue__M5GuO_3"/>
+            <planItem id="_M5GuO_5" name="Completed" definitionRef="ms__M5GuO_5">
+                <entryCriterion id="crit__M5GuO_0" sentryRef="s_crit__M5GuO_0"/>
+                <itemControl id="_M5GuO_6">
+                    <requiredRule id="_M5GuO_8">
+                        <condition id="_M5GuO_9">
+                            <body><![CDATA[true]]></body>
+                        </condition>
+                    </requiredRule>
+                </itemControl>
+            </planItem>
+            <sentry id="s_crit__M5GuO_0">
+                <planItemOnPart id="_M5GuO_7" sourceRef="_M5GuO_3">
+                    <standardEvent>occur</standardEvent>
+                </planItemOnPart>
+            </sentry>
+            <userEvent id="ue__M5GuO_3" name="Trigger Completion"/>
+            <milestone id="ms__M5GuO_5" name="Completed"/>
+        </casePlanModel>
+        <caseRoles cafienne:caseTeamRef="testteam.caseteam">
+            <role id="cr__rAKmR_0" name="Employee"/>
+            <role id="cr__rAKmR_1" name="Manager"/>
+            <role id="cr__rAKmR_2" name="ADMIN">
+                <documentation textFormat="text/plain">
+                    <text><![CDATA[admin of the world]]></text>
+                </documentation>
+            </role>
+        </caseRoles>
+    </case>
+    <CMMNDI>
+        <CMMNDiagram>
+            <CMMNShape name="casetask/chain" cmmnElementRef="cm__L0R9y_0">
+                <Bounds x="20" y="20" width="800" height="500"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_L0R9y_1">
+                <Bounds x="130" y="110" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_L0R9y_4">
+                <Bounds x="130" y="240" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_L0R9y_8">
+                <Bounds x="360" y="110" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_L0R9y_10">
+                <Bounds x="130" y="350" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape name="casetask/subcase" cmmnElementRef="cm__6SOUw_0">
+                <Bounds x="20" y="20" width="800" height="500"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_6SOUw_1">
+                <Bounds x="110" y="80" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_6SOUw_3">
+                <Bounds x="110" y="220" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_6SOUw_5">
+                <Bounds x="340" y="80" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape name="casetask/subsubcase" cmmnElementRef="cm__w4FSD_0">
+                <Bounds x="20" y="20" width="800" height="500"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_w4FSD_1">
+                <Bounds x="210" y="120" width="140" height="80"/>
+            </CMMNShape>
+            <CMMNShape name="casetask/subcase_technical" cmmnElementRef="cm__M5GuO_0">
+                <Bounds x="20" y="20" width="800" height="500"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_M5GuO_3">
+                <Bounds x="270" y="120" width="32" height="32"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="_M5GuO_5">
+                <Bounds x="240" y="230" width="100" height="40"/>
+            </CMMNShape>
+            <CMMNShape cmmnElementRef="crit__M5GuO_0">
+                <Bounds x="284" y="220" width="12" height="20"/>
+            </CMMNShape>
+            <CMMNEdge sourceCMMNElementRef="_M5GuO_3" targetCMMNElementRef="crit__M5GuO_0"/>
+        </CMMNDiagram>
+    </CMMNDI>
+</definitions>
