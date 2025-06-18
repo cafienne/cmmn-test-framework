@@ -6,6 +6,7 @@ export default class Task extends CMMNBaseClass {
         public taskName: string,
         public taskState: string,
         public assignee: string,
+        public performable: boolean,
         public owner: string,
         public caseInstanceId: string,
         public tenant: string,

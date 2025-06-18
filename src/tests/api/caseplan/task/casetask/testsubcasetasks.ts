@@ -108,9 +108,9 @@ async function assertTaskCount(user: User, caseInstance: Case | string, includeS
           console.log(`\nTasks for Case Instance: ${task.caseInstanceId} - ${tree.findCaseName(task.caseInstanceId)}`);
           pref = task.caseInstanceId;
         }
-        console.log(`- Task[${index + 1}]: ${task.taskName} (id=${task.id} case=${task.caseInstanceId} )`);
+        console.log(`- Task[${index + 1}]: ${task.taskName} (access=${task.performable} id=${task.id} case=${task.caseInstanceId} )`);
       });
-    if (tasks.length !== expectedCount) {
+    if (tasks.filter(task => task.performable).length !== expectedCount) {
       throw new Error(`Expected ${expectedCount} tasks in the case, but found ${tasks.length}`);
     }
   });
